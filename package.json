@@ -1,0 +1,17 @@
+{
+  "name": "basic-ts-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "dependencies": {
+    "ts-loader": "^4.4.1",
+    "typescript": "^2.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+      "dev": "webpack -d --watch",
+      "prod": "webpack -p"
+  },
+  "author": "Jakub Maksimowicz",
+  "license": "MIT"
+}
