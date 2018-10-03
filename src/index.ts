@@ -1,5 +1,5 @@
 /* import styles */
-import './style.css';
+import './style.scss';
 
 /* hello world */
 function greeter(person:any) {
