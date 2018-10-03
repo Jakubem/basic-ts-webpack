@@ -1,6 +1,7 @@
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const minify = {
   removeComments: true,
@@ -22,7 +23,16 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader"
+          },
+        ],
+      },
     ]
   },
   resolve: {
@@ -49,6 +59,9 @@ module.exports = {
       minify: minify,
       template: './src/index.html',
       filename: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: "bundle.css",
     }),
   ],
 };

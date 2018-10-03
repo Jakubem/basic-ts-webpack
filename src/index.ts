@@ -1,5 +1,7 @@
-/* hello world */
+/* import styles */
+import './style.css';
 
+/* hello world */
 function greeter(person:any) {
     return "Hello, " + person;
 }
